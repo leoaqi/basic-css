@@ -28,10 +28,27 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
+const bgHeader = () =>{
+    const header = document.getElementById('header')
+    if(this.scrollY >= 50) header.classList.add('bg-header')
+    else header.classList.remove('bg-header')
+}
 
+window.addEventListener('scroll', bgHeader)
+bgHeader()
 
 /*=============== SWIPER SERVICES ===============*/ 
-
+const swiperService = new Swiper('.services__swiper', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 24,
+    slidesPerView: 'auto',
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
